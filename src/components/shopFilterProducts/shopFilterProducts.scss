@@ -1,0 +1,25 @@
+
+.buttons-group {
+  display: flex;
+  justify-content: center;
+  
+  &_button {
+    padding: 19px 20px;
+    margin: 0px 10px;
+    width: 200px;
+    height: 62px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+
+  }
+  
+  &_button-active {
+    padding: 19px 20px;
+    margin: 0px 10px;
+    width: 200px;
+    height: 62px;
+    background: #000000;
+    color: #ffffff;
+  }
+}

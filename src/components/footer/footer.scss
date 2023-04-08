@@ -1,0 +1,53 @@
+
+.footer {
+  height: 240px;
+  background-color: #F1EADC;
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  &_body {
+    width: 1110px;
+    margin: 0px auto;
+  }
+
+  &_navbar {
+    padding: 50px 0px 0px 0px;
+
+    &_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & p {
+        margin: 2px 0px;
+      }
+
+      &_link {
+        color: #000000;
+        text-decoration: none;
+        margin: 0px 15px;
+
+        &:hover {
+          color: #6E9C9F;
+        }
+      }
+    }
+  }
+
+  &_inf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0px 0px 0px;
+
+    & p {
+      margin: 0px;
+    }
+  }
+}
+
+.m-zero {
+  margin: 1px;
+}

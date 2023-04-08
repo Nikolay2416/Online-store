@@ -1,15 +1,16 @@
-import {Navbar, Nav, Container, Button} from "react-bootstrap"
+import {Link} from "react-router-dom";
+import {Navbar, Nav, Container, Button} from "react-bootstrap";
 
 const Menu = () => {
   return (
     <Navbar bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home">Womazing</Navbar.Brand>
+        <Link className="h4 link-dark text-decoration-none" to="/">Womazing</Link>
         <Nav className="me-centr">
-          <Nav.Link href="#home">Главная</Nav.Link>
-          <Nav.Link href="#features">Магазин</Nav.Link>
-          <Nav.Link href="#pricing">О бренде</Nav.Link>
-          <Nav.Link href="#pricing">Контакты</Nav.Link>
+          <Link to="/" className="ms-3 me-3 link-dark text-decoration-none">Главная</Link>
+          <Link className="ms-3 me-3 link-dark text-decoration-none" to="/Shop">Магазин</Link>
+          <Link className="ms-3 me-3 link-dark text-decoration-none" to="/AboutBrand">О бренде</Link>
+          <Link className="ms-3 me-3 link-dark text-decoration-none" to="/Contacts">Контакты</Link>
         </Nav>
         <Nav className="ml-auto">
           <Button variant="light">+7 (000) 000-00-00</Button>
