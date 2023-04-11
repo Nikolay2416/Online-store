@@ -1,14 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { shopFetched, setCurrentPage } from '../../actions';
+import { shopFetched, setCurrentPage, requestСart } from '../../actions';
+import {Link} from "react-router-dom";
+import Spinner from '../spinner/Spinner';
 
 import {Card, Image} from "react-bootstrap";
-
-import Spinner from '../spinner/Spinner';
 import "./shopCollection.scss";
+
+// Если мы заходим на вкл магазин и там филтре не all то не загружаються товары. Исправить!
 
 const ShopСollection = () => {
 
+  const [quantityOfGoods, setQuantityOfGoods] = useState(1);
   const {filterShop, currentPage, todosPerPage, productsShopLoadingStatus} = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
@@ -23,6 +26,10 @@ const ShopСollection = () => {
 
   const numberOfProductsPerPage = currentTodos.length;
   const totalNumberOfProducts = filterShop.length;
+
+  const handleChange = event => {
+    setQuantityOfGoods(event.target.value);
+  };
 
   useEffect(() => {
     dispatch(shopFetched(fetch));
@@ -43,13 +50,24 @@ const ShopСollection = () => {
 
     return arr.map(({id,image, price, title}) => {
         return (
-          <Card className="mb-3" style={{width: 320}} key={id}>
-            <Image width={280} height={390} className="m-3 object-fit-cover" src={image}/>
-            <Card.Body className="m-auto">
-              <Card.Title>{title}</Card.Title>
-              <div className="price">{price}</div>
-            </Card.Body>
-          </Card>
+            <Card className="mb-3" style={{width: 320}} key={id}>
+              <Link className="oneProduct-body_navigation_link" to={`/OneItem/${id}`}>
+              <Image width={280} height={390} className="m-3 object-fit-cover" src={image}/>
+              <Card.Body className="m-auto">
+                <Card.Title>{title}</Card.Title>
+                <div className="price text-center">{price}$</div>
+              </Card.Body>
+              </Link>
+              <div className="card_body">
+                <input type="number" 
+                value={quantityOfGoods}
+                onChange={handleChange}
+                />
+                <button
+                  onClick={() => dispatch(requestСart(id, quantityOfGoods))}
+                >Добавить в корзину</button>
+              </div>
+            </Card>
         )
     })
   }

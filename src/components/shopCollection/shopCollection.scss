@@ -32,3 +32,25 @@
     }
   }
 }
+
+.card_body {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  & input {
+  width: 59px;
+  height: 59px;
+  text-align: center;
+  }
+
+  & button {
+    margin-left: 10px;
+    width: 230px;
+    height: 60px;
+    background: #6E9C9F;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+  }
+}

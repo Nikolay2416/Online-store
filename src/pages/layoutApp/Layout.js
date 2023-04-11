@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Menu from "../../components/menu/Menu";
+import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 
 import "./layout.scss"
@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <div className="layout">
       <div className="layout_menu">
-        <Menu/>
+        <Header/>
       </div>
       <div className="layout_outlet">
         <Outlet/>

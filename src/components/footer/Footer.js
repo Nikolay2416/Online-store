@@ -29,7 +29,7 @@ const Footer = () => {
             <p>Публичная оферта</p>
           </div>
           <div className="">
-            <img src={visaMastercard} alt="visa" srcset="" />
+            <img src={visaMastercard} alt="visa"/>
           </div>
         </div>
       </div>

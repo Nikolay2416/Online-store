@@ -8,6 +8,24 @@ export const shopFetched = (fetch) => (dispatch) => {
       .catch(() => dispatch(productsShopFetchingError()))
 }
 
+// oneProduct запрос
+export const oneProduct = (id) => (dispatch) => {
+  dispatch('PRODUCT_FETCHING');
+  fetch(`https://fakestoreapi.com/products/${id}`)
+      .then(res=>res.json())
+      .then(res => dispatch(oneProductShop(res)))
+      .catch(() => dispatch(productsShopFetchingError()))
+}
+
+// requestСart запрос
+export const requestСart = (id, quantityOfGoods) => (dispatch) => {
+  dispatch('PRODUCT_FETCHING');
+  fetch(`https://fakestoreapi.com/products/${id}`)
+      .then(res=>res.json())
+      .then(res => dispatch(cartFetched(res, quantityOfGoods)))
+      .catch(() => dispatch(productsShopFetchingError()))
+}
+
  // Filter запрос
 export const filterFetched = (fetch) => (dispatch) => {
   dispatch('FILTERSHOP_FETCHING');
@@ -66,9 +84,37 @@ export const activeFilterChanged = (filter) => {
   }
 }
 
+// currentPage
+
 export const setCurrentPage = (CurrentPage) => {
   return {
       type: 'CURRENTPAGE',
       payload: CurrentPage
+  }
+}
+
+// oneProduct 
+
+export const oneProductShop = (oneProduct) => {
+  return {
+      type: 'ONEPRODUCTSHOP_FETCHED',
+      payload: oneProduct
+  }
+}
+
+// oneProduct 
+
+export const cartFetched = (cart, quantityOfGoods) => {
+  return {
+      type: 'CART_FETCHED',
+      cart,
+      quantityOfGoods,
+  }
+}
+
+export const cartDeleted = (id) => {
+  return {
+      type: 'CART_DELETED',
+      payload: id
   }
 }

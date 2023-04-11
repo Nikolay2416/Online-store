@@ -1,0 +1,51 @@
+
+.product_characteristics {
+  display: flex;
+  justify-content: space-between;
+  border:0;
+  border-bottom:1px solid #CCCCCC;
+
+  &_product {
+    flex-grow: 2.5;
+  }
+
+  &_others {
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+.product {
+  margin: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & button {
+    background-color: #fff;
+    border: none;
+    font-size: 25px;
+  }
+
+  & img {
+    width: 110px;
+    height: 145px;
+  }
+
+  &_title {
+    flex-grow: 2;
+  }
+
+  &_count {
+    display: flex;
+    
+  }
+
+  &_others {
+    flex-grow: 1;
+  }
+}
+
+.text-align {
+  text-align: center;
+}
