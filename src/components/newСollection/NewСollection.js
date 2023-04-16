@@ -20,7 +20,7 @@ const NewСollection = () => {
       return <h5 className="text-center mt-5">Ошибка загрузки</h5>
   }
 
-  const renderHeroesList = (arr) => {
+  const renderProductList = (arr) => {
     if (arr.length === 0) {
       return (
               <h5 className="text-center mt-5"><Spinner/></h5>
@@ -42,7 +42,7 @@ const NewСollection = () => {
     })
   }
 
-  const elements = renderHeroesList(productsShop);
+  const elements = renderProductList(productsShop);
 
   return (
     <div style={{width: 1110}} className="m-auto">

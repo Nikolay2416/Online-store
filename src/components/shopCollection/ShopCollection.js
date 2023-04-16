@@ -7,7 +7,7 @@ import Spinner from '../spinner/Spinner';
 import {Card, Image} from "react-bootstrap";
 import "./shopCollection.scss";
 
-// Если мы заходим на вкл магазин и там филтре не all то не загружаються товары. Исправить!
+// Если мы заходим на вкл магазин и там филтре не all то не загружаються товары. Исправить! (all юзэфект)
 
 const ShopСollection = () => {
 
@@ -41,7 +41,7 @@ const ShopСollection = () => {
       return <h5 className="text-center mt-5">Ошибка загрузки</h5>
   }
 
-  const renderHeroesList = (arr) => {
+  const renderProductList = (arr) => {
     if (arr.length === 0) {
       return (
               <h5 className="text-center mt-5"><Spinner/></h5>
@@ -72,7 +72,7 @@ const ShopСollection = () => {
     })
   }
 
-  const elements = renderHeroesList(currentTodos);
+  const elements = renderProductList(currentTodos);
   
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(filterShop.length / todosPerPage); i++) {

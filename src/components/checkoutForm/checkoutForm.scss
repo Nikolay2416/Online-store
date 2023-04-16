@@ -1,0 +1,91 @@
+
+.form_body {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.form_heading {
+  margin-bottom: 20px;
+}
+
+.form_inputs {
+  &_input {
+    width: 350px;
+    height: 40px;
+    margin-bottom: 20px;
+    border:none;
+    border-bottom: 1px solid #000000;
+  }
+
+  &_textarea {
+    width: 350px;
+    height: 134px;
+    border:none;
+    border-bottom: 1px solid #000000;
+    resize: none;
+  }
+}
+
+.form_order {
+  & button {
+    width: 246px;
+    height: 68px;
+    background: #6E9C9F;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+  }
+}
+
+.order-details {
+  width: 300px;
+  margin-right: 210px;
+
+  &_heading {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 15px;
+    border:none;
+    border-bottom: 1px solid #000000;
+  }
+
+  &_product {
+    display: flex;
+    justify-content: space-between;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    margin-bottom: 5px;
+  }
+
+  &_result {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    width: 300px;
+    height: 57px;
+    padding: 15px 15px 0px 15px;
+    margin-bottom: 70px;
+    background: #F1EADC;
+  }
+}
+
+.form_checkbox_body {
+  margin-bottom: 10px;
+}
+
+.form_checkbox{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.error {
+  color: red;
+}

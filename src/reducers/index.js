@@ -9,6 +9,7 @@ const initialState = {
   todosPerPage: 9,
   productOne: [],
   addedToCart: [],
+  sumProducts: 0,
 }
 
 const productsReducer = (state = initialState, action) => {
@@ -83,27 +84,63 @@ const productsReducer = (state = initialState, action) => {
 
         case 'CART_FETCHED':
 
-        const itemIndex = state.addedToCart.findIndex((item) => item.id === action.cart.id);
-    
-        if (itemIndex === -1) {
-            return {
-                ...state,
-                addedToCart: [...state.addedToCart, { ...action.cart, count: action.quantityOfGoods}],
+            const itemIndex = state.addedToCart.findIndex((item) => item.id === action.cart.id);
+        
+            if (itemIndex === -1) {
+                return {
+                    ...state,
+                    addedToCart: [...state.addedToCart, { ...action.cart, count: action.quantityOfGoods}],
+                }
+            } else {
+                const copy = state.addedToCart;
+                copy[itemIndex].count = action.quantityOfGoods;
+
+                return {
+                    ...state,
+                    addedToCart: copy
+                }
             }
-        } else {
-            const copy = state.addedToCart;
-            copy[itemIndex].count = action.quantityOfGoods;
+
+        case 'COUNTER_PLUS':
+
+            const itemIndexPlus = state.addedToCart.findIndex((item) => item.id === action.cart.id);
+
+            const copyPlus = state.addedToCart;
+            copyPlus[itemIndexPlus].count = action.countPlus;
 
             return {
                 ...state,
-                addedToCart: copy
+                addedToCart: copyPlus,
+                sumProducts:  state.sumProducts + action.priceForTheseProductsPlus
             }
-        }
+
+        case 'COUNTER_MINUS':
+
+            const itemIndexMinus = state.addedToCart.findIndex((item) => item.id === action.cart.id);
+
+            const copyMinus = state.addedToCart;
+            copyMinus[itemIndexMinus].count = action.copyMinus;
+
+            return {
+                ...state,
+                addedToCart: copyMinus,
+                sumProducts:  state.sumProducts - action.priceForTheseProductsMinus
+            }
 
         case 'CART_DELETED': 
+        console.log(state.sumProducts, action.priceForTheseProducts)
             return {
                 ...state,
-                addedToCart: state.addedToCart.filter(item => item.id !== action.payload)
+                addedToCart: state.addedToCart.filter(item => item.id !== action.id),
+                sumProducts:  state.sumProducts - action.priceForTheseProducts
+            }
+
+    // sumProducts
+
+        case 'SUMPRODUCTS':
+            return {
+                ...state,
+                sumProducts: action.payload
             }
 
         default: return state

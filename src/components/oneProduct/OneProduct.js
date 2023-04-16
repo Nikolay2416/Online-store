@@ -24,7 +24,7 @@ const OneProduct = () => {
 
   let updateInput = 1;
 
-  const renderHeroesList = (object) => {
+  const renderProductList = (object) => {
     if (object.length === 0) {
       return (
               <h5 className="text-center mt-5"><Spinner/></h5>
@@ -55,7 +55,7 @@ const OneProduct = () => {
     )
   }
 
-  const elements = renderHeroesList(productOne);
+  const elements = renderProductList(productOne);
   
 
   return (

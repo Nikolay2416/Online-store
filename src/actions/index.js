@@ -19,12 +19,28 @@ export const oneProduct = (id) => (dispatch) => {
 
 // requestСart запрос
 export const requestСart = (id, quantityOfGoods) => (dispatch) => {
-  dispatch('PRODUCT_FETCHING');
   fetch(`https://fakestoreapi.com/products/${id}`)
       .then(res=>res.json())
       .then(res => dispatch(cartFetched(res, quantityOfGoods)))
       .catch(() => dispatch(productsShopFetchingError()))
 }
+
+// setCounterPlus запрос 
+export const setCounterPlus = (id, countPlus) => (dispatch) => {
+  fetch(`https://fakestoreapi.com/products/${id}`)
+      .then(res=>res.json())
+      .then(res => dispatch(cartFetched(res, countPlus)))
+      .catch(() => dispatch(productsShopFetchingError()))
+}
+
+// setCounterMinus запрос
+export const setCounterMinus = (id, countPlus) => (dispatch) => {
+  fetch(`https://fakestoreapi.com/products/${id}`)
+      .then(res=>res.json())
+      .then(res => dispatch(cartFetched(res, countPlus)))
+      .catch(() => dispatch(productsShopFetchingError()))
+}
+
 
  // Filter запрос
 export const filterFetched = (fetch) => (dispatch) => {
@@ -112,9 +128,37 @@ export const cartFetched = (cart, quantityOfGoods) => {
   }
 }
 
-export const cartDeleted = (id) => {
+export const counterPlus = (cart, countPlus, priceForTheseProductsPlus) => {
+  return {
+      type: 'COUNTER_PLUS',
+      cart,
+      countPlus,
+      priceForTheseProductsPlus
+  }
+}
+
+export const counterMinus = (cart, copyMinus, priceForTheseProductsMinus) => {
+  return {
+      type: 'COUNTER_MINUS',
+      cart,
+      copyMinus,
+      priceForTheseProductsMinus
+  }
+}
+
+export const cartDeleted = (id, priceForTheseProducts) => {
   return {
       type: 'CART_DELETED',
-      payload: id
+      id,
+      priceForTheseProducts
+  }
+}
+
+// setSumProducts 
+
+export const setSumProducts = (sum) => {
+  return {
+      type: 'SUMPRODUCTS',
+      payload: sum
   }
 }
