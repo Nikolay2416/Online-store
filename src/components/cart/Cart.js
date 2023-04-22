@@ -1,6 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { cartDeleted, setCounterPlus, setCounterMinus, setSumProducts } from '../../actions';
+import { cartDeleted,
+         counterPlus,
+         counterMinus,
+         setSumProducts, } from '../../actions';
 import {Link} from "react-router-dom";
 
 import "./cart.scss";
@@ -10,16 +13,8 @@ const Cart = () => {
 
   const {addedToCart, sumProducts} = useSelector((state) => state.products);
   const dispatch = useDispatch();
-  // const [theTotalAmountOfProductsProduced, setTheTotalAmountOfProductsProduced] = useState(0);
+
   let theTotalAmountOfProductsProduced = 0;
-
-  useEffect(() => {
-      console.log(sumProducts, theTotalAmountOfProductsProduced)
-      dispatch(setSumProducts(theTotalAmountOfProductsProduced))
-  }, [theTotalAmountOfProductsProduced]);
-
-  
-  
 
   const renderProductList = (arr) => {
     if (arr.length === 0) {
@@ -30,20 +25,9 @@ const Cart = () => {
 
     return arr.map(({id,image, price, title, count}) => {
 
-      let countPlus = +count + +1;
-
-      let countMinus;
-      if (count > 0) {
-        countMinus = +count - +1;
-      } else {
-        countMinus = 0;
-      }
-
       let priceForTheseProducts = count * price;
-      theTotalAmountOfProductsProduced = theTotalAmountOfProductsProduced + priceForTheseProducts;
-      // console.log(sumProducts, theTotalAmountOfProductsProduced)
 
-      // setTheTotalAmountOfProductsProduced(theTotalAmountOfProductsProduced + priceForTheseProducts);
+      theTotalAmountOfProductsProduced = theTotalAmountOfProductsProduced + priceForTheseProducts;
 
       return (
         <div className="product" key={id}>
@@ -60,9 +44,9 @@ const Cart = () => {
           </div>
           <p className="product_others">{price}$</p>
           <div className="product_count">
-            <button onClick={() => dispatch(setCounterMinus(id, countMinus, priceForTheseProducts))}>-</button>
+            <button onClick={() => dispatch(counterMinus(id))}>-</button>
             <p>{count}</p>
-            <button onClick={() => dispatch(setCounterPlus(id, countPlus, priceForTheseProducts))}>+</button>
+            <button onClick={() => dispatch(counterPlus(id))}>+</button>
           </div>
           <p className="product_others text-align">{ count > 0 ? Math.round((priceForTheseProducts) * 100) / 100 : 0}$</p>
         </div>

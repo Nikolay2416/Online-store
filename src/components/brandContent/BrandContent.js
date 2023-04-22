@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import {Link} from "react-router-dom";
 
 import "./brandContent.scss";
@@ -5,6 +6,11 @@ import brandBlockOneImg from "../../assets/brand_blockOne_img.png";
 import brandBlockTwoImg from "../../assets/brand_blockTwo_img.png";
 
 const BrandContent = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
+
   return (
     <div  className="brand">
       <h1 className="brand_heading">О бренде</h1>

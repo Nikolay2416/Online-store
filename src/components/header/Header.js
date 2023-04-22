@@ -5,12 +5,11 @@ import "./header.scss";
 import basketImg from "../../assets/basket-img.png";
 
 const Header = () => {
-  let location = useLocation();
+  const location = useLocation();
 
   const {addedToCart} = useSelector((state) => state.products);
 
   return (
-    // <div className="header">
     <div className={location.pathname === "/" ? "header linear-gradient" : "header"}>
       <div className="header_body">
         <div className="header_navbar">

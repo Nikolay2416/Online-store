@@ -22,8 +22,6 @@ const OneProduct = () => {
     dispatch(oneProduct(userId));
   }, [dispatch]);
 
-  let updateInput = 1;
-
   const renderProductList = (object) => {
     if (object.length === 0) {
       return (

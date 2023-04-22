@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { shopFetched, setCurrentPage, requestСart } from '../../actions';
+import { shopFetched, setCurrentPage, requestСart, activeFilterChanged } from '../../actions';
 import {Link} from "react-router-dom";
 import Spinner from '../spinner/Spinner';
 
-import {Card, Image} from "react-bootstrap";
 import "./shopCollection.scss";
-
-// Если мы заходим на вкл магазин и там филтре не all то не загружаються товары. Исправить! (all юзэфект)
 
 const ShopСollection = () => {
 
   const [quantityOfGoods, setQuantityOfGoods] = useState(1);
   const {filterShop, currentPage, todosPerPage, productsShopLoadingStatus} = useSelector((state) => state.products);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    dispatch(activeFilterChanged("all"));
+    dispatch(shopFetched(fetch));
+  }, []);
 
   const handleClick = (event) => {
     window.scrollTo(0, 350)
@@ -104,7 +107,6 @@ const ShopСollection = () => {
       <p>
         Показано {numberOfProductsPerPage} из {totalNumberOfProducts} товаров
       </p>
-      {/* <div className="m-auto mt-3 flex row justify-content-between"> */}
       <div className="shopCollection_products">
         {elements}
       </div>

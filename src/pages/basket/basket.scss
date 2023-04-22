@@ -1,0 +1,31 @@
+
+.basket-header {
+  width: 1110px;
+  margin: auto;
+
+  &_heading {
+    font-size: 55px;
+    margin: 60px 0px 20px 0px;
+  }
+
+  &_navigation {
+    margin: 0px 0px 60px 0px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+
+    &_link {
+      color: #000000;
+      text-decoration: none;
+
+      &:hover {
+        color: #6E9C9F;
+      }
+    }
+
+    & span {
+      color: #919191;
+    }
+  }
+}

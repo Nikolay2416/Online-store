@@ -1,6 +1,3 @@
-// import { useRef, useState } from 'react';
-// import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { useEffect, useRef } from "react";
 import { register } from "swiper/element/bundle";
 

@@ -1,6 +1,5 @@
-
  // Shop запрос
-export const shopFetched = (fetch) => (dispatch) => {
+ export const shopFetched = (fetch) => (dispatch) => {
   dispatch('PRODUCT_FETCHING');
   fetch('https://fakestoreapi.com/products')
       .then(res=>res.json())
@@ -24,23 +23,6 @@ export const requestСart = (id, quantityOfGoods) => (dispatch) => {
       .then(res => dispatch(cartFetched(res, quantityOfGoods)))
       .catch(() => dispatch(productsShopFetchingError()))
 }
-
-// setCounterPlus запрос 
-export const setCounterPlus = (id, countPlus) => (dispatch) => {
-  fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(res=>res.json())
-      .then(res => dispatch(cartFetched(res, countPlus)))
-      .catch(() => dispatch(productsShopFetchingError()))
-}
-
-// setCounterMinus запрос
-export const setCounterMinus = (id, countPlus) => (dispatch) => {
-  fetch(`https://fakestoreapi.com/products/${id}`)
-      .then(res=>res.json())
-      .then(res => dispatch(cartFetched(res, countPlus)))
-      .catch(() => dispatch(productsShopFetchingError()))
-}
-
 
  // Filter запрос
 export const filterFetched = (fetch) => (dispatch) => {
@@ -128,21 +110,17 @@ export const cartFetched = (cart, quantityOfGoods) => {
   }
 }
 
-export const counterPlus = (cart, countPlus, priceForTheseProductsPlus) => {
+export const counterPlus = (id) => {
   return {
       type: 'COUNTER_PLUS',
-      cart,
-      countPlus,
-      priceForTheseProductsPlus
+      id,
   }
 }
 
-export const counterMinus = (cart, copyMinus, priceForTheseProducts) => {
+export const counterMinus = (id) => {
   return {
       type: 'COUNTER_MINUS',
-      cart,
-      copyMinus,
-      priceForTheseProducts
+      id,
   }
 }
 

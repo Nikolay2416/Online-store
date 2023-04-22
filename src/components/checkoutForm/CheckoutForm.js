@@ -2,10 +2,9 @@ import {useSelector} from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useNavigate } from "react-router-dom";
+import Spinner from "../spinner/Spinner"
 
-import "./checkoutForm.scss"
-
-// удалять из массива карзины все элементы 
+import "./checkoutForm.scss";
 
 const CheckoutForm = () => {
 
@@ -20,7 +19,7 @@ const CheckoutForm = () => {
   const renderProductList = (arr) => {
     if (arr.length === 0) {
       return (
-              <h5 className="text-center mt-5">Загрузка</h5>
+              <h5 className="text-center mt-5"><Spinner/></h5>
       )
     }
 

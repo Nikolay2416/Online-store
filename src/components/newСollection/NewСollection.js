@@ -6,12 +6,14 @@ import {Link} from "react-router-dom";
 import Spinner from '../spinner/Spinner';
 import "./newСollection.scss";
 
-// при нажатии на продукт подниматься в верх страницы
-
 const NewСollection = () => {
 
   const {productsShop, productsShopLoadingStatus} = useSelector((state) => state.products);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   useEffect(() => {
     dispatch(shopFetched(fetch));
