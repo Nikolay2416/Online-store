@@ -1,0 +1,29 @@
+
+.errorPage {
+  width: 1110px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 400px;
+
+  &_text {
+
+    p {
+      font-size: 25px;
+      margin: 0;
+    }
+  }
+
+  &_link {
+    margin-left: 15px;
+    font-size: 25px;
+    color: #6E9C9F;
+    text-decoration: none;
+
+    &:hover {
+      color: #000000;
+    }
+  }
+
+}

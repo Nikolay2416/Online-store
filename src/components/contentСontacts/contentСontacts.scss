@@ -1,0 +1,106 @@
+
+.contentСontacts {
+  width: 1110px;
+  margin: auto;
+
+  &_heading {
+    font-size: 55px;
+    margin: 60px 0px 20px 0px;
+  }
+
+  &_navigation {
+    margin: 0px 0px 60px 0px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+
+    &_link {
+      color: #000000;
+      text-decoration: none;
+
+      &:hover {
+        color: #6E9C9F;
+      }
+    }
+
+    & span {
+      color: #919191;
+    }
+  }
+
+
+  &_contacts {
+    display: flex;
+    justify-self: start;
+    margin-top: 100px;
+    margin-bottom: 80px;
+
+    &_contact {
+      margin-right: 110px;
+
+      & p {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+
+  &_map {
+    width: 1109px;
+    height: 476px;
+    margin-bottom: 130px;
+
+    &_YMaps {
+      width: 1109px;
+      height: 476px;
+
+      &_Map {
+        width: 1109px;
+        height: 476px;
+      }
+    }
+  }
+
+  &_form {
+    margin-bottom: 130px;
+
+    &_heading {
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 140%;
+      letter-spacing: 0.02em;
+      margin-bottom: 20px;
+    }
+      
+    &_input {
+      width: 350px;
+      height: 40px;
+      border:none;
+      border-bottom: 1px solid #000000;
+    }
+    
+    &_textarea {
+      width: 350px;
+      height: 134px;
+      border:none;
+      border-bottom: 1px solid #000000;
+      resize: none;
+      margin-bottom: 35px;
+    }
+    
+    &_button{
+
+      & button {
+        width: 189px;
+        height: 68px;
+        background: #6E9C9F;
+        color: #fff;
+        font-size: 15px;
+        border: none;
+      }
+    }
+  }
+}

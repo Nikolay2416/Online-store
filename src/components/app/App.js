@@ -5,11 +5,13 @@ import Home from "../../pages/Home";
 import AboutBrand from "../../pages/AboutBrand";
 import Basket from "../../pages/basket/Basket";
 import Shop from "../../pages/shop/Shop";
-import ErrorPage from "../../pages/ErrorPage";
+import ErrorPage from "../../pages/errorPage/ErrorPage";
 import Contacts from "../../pages/Contacts";
 import OneItem from "../../pages/OneItem";
 import MakingAnOrder from "../../pages/makingAnOrder/MakingAnOrder";
 import Success from "../../pages/success/Success";
+
+import "./app.scss"
 
 function App() {
   return (

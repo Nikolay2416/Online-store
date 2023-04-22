@@ -1,8 +1,14 @@
 import NewСollection from "../components/newСollection/NewСollection";
+import Fullscreen from "../components/fullscreen/Fullscreen";
+import ContentHome from "../components/contentHome/ContentHome"
 
 const Home = () => {
   return (
-    <NewСollection/>
+    <div>
+      <Fullscreen/>
+      <NewСollection/>
+      <ContentHome/>
+    </div>
   )
 }
 

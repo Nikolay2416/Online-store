@@ -1,0 +1,111 @@
+
+.contentHome {
+  width: 1110px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+
+  &_h2 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    margin-bottom: 80px;
+  }
+
+  &_advantages {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 130px;
+
+    &_advantage {
+
+      width: 290px;
+
+      &_img {
+        width: 61px;
+        height: 61px;
+        margin-bottom: 35px;
+
+        & img {
+          width: 61px;
+          height: 61px;
+        }
+      }
+
+      & h3 {
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        margin-bottom: 20px;
+      }
+
+      & p {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+      }
+    }
+  }
+
+  &_team {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+
+    &_swiper {
+      display: block;
+      margin: 0px 20px;
+      width: 350px;
+      height: 478px;
+    }
+
+    &_swiper-container {
+      display: block;
+      margin: 0px 100px;
+      width: 350px;
+      height: 478px;
+    }
+
+    &_description {
+      width: 600px;
+      padding: 0px 150px 0px 150px;
+
+      & h3 {
+        width: 300px;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        margin-bottom: 30px;
+      }
+
+      & p {
+        width: 300px;
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        margin-bottom: 30px;
+      }
+
+      &_link-body {
+        width: 300px;
+      }
+
+      &_link {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 140%;
+        letter-spacing: 0.02em;
+        color: #6E9C9F;
+        text-decoration: none;
+
+        &:hover {
+          color: #000000;
+        }
+      }
+    }
+  }
+}

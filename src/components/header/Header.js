@@ -1,29 +1,42 @@
 import { useSelector } from 'react-redux';
-import {Link} from "react-router-dom";
-import {Navbar, Nav, Container, Button} from "react-bootstrap";
+import {Link, useLocation} from "react-router-dom";
 
-import "./header.scss"
+import "./header.scss";
+import basketImg from "../../assets/basket-img.png";
 
 const Header = () => {
+  let location = useLocation();
 
   const {addedToCart} = useSelector((state) => state.products);
 
   return (
-    <Navbar className="header" variant="light">
-      <Container className="header_container">
-        <Link className="h4 link-dark text-decoration-none" to="/">Womazing</Link>
-        <Nav className="me-centr">
-          <Link to="/" className="ms-3 me-3 link-dark text-decoration-none">Главная</Link>
-          <Link className="ms-3 me-3 link-dark text-decoration-none" to="/Shop">Магазин</Link>
-          <Link className="ms-3 me-3 link-dark text-decoration-none" to="/AboutBrand">О бренде</Link>
-          <Link className="ms-3 me-3 link-dark text-decoration-none" to="/Contacts">Контакты</Link>
-        </Nav>
-        <Nav className="ml-auto">
-          <Button variant="light">+7 (000) 000-00-00</Button>
-          <Link className="ms-3 me-3 mt-2 link-dark text-decoration-none" to="/Basket">Корзина {addedToCart.length}</Link>
-        </Nav>
-      </Container>
-    </Navbar>
+    // <div className="header">
+    <div className={location.pathname === "/" ? "header linear-gradient" : "header"}>
+      <div className="header_body">
+        <div className="header_navbar">
+          <div className="header_navbar_container">
+            <Link  className="header_navbar_container_link emblem" to="/"><h3>NG-shop</h3></Link>
+            <div>
+              <Link className="header_navbar_container_link" to="/">Главная</Link>
+              <Link className="header_navbar_container_link" to="/Shop">Магазин</Link>
+              <Link className="header_navbar_container_link" to="/AboutBrand">О бренде</Link>
+              <Link className="header_navbar_container_link" to="/Contacts">Контакты</Link>
+            </div>
+            <div className="header_navbar_container_button-basket">
+              <button>+7 (888) 823-54-12</button>
+              <Link className="header_navbar_container_link basket" to="/Basket">
+                <div className="header_navbar_container_button-basket_link">
+                  <div>
+                    <img src={basketImg} alt="basketImg" />
+                  </div>
+                  <div className="header_navbar_container_button-basket_link_quantity">{addedToCart.length}</div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 

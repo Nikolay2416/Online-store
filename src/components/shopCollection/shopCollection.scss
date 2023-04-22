@@ -1,11 +1,83 @@
 
-.shopCollection-body {
+.shopCollection {
   width: 1110px;
   margin: 0 auto;
 
+  &_products {
+    display: flex;
+    justify-content: start;
+    flex-flow: row wrap;
+    margin-bottom: 50px;
+    margin: 0px auto;
+    width: 1110px;
+
+    &_product {
+      width: 320px;
+      margin: 0px 25px;
+
+      &_link {
+        color: #000000;
+        text-decoration: none;
+
+        &:hover {
+          color: #6E9C9F;
+        }
+      }
+
+      & img {
+        width: 280px;
+        height: 390px;
+        margin: 20px;
+      }
+
+      &_body {
+        height: 50px;
+        
+        &_title {
+          text-align: center;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+        }
+  
+        &_price {
+          text-align: center;
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+          color: #998E78;
+        }
+      }
+
+      &_addingToCart { 
+        display: flex;
+        justify-content: center;
+        margin: 5px 0px 30px 0px;
+      
+        & input {
+        width: 59px;
+        height: 59px;
+        text-align: center;
+        }
+      
+        & button {
+          margin-left: 10px;
+          width: 230px;
+          height: 60px;
+          background: #6E9C9F;
+          color: #fff;
+          font-size: 15px;
+          border: none;
+        }
+      }
+    }
+  }
+
   & p {
     color: #808080; 
-    margin: 30px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
   }
 
   &_buttons-group {
@@ -33,24 +105,3 @@
   }
 }
 
-.card_body {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-
-  & input {
-  width: 59px;
-  height: 59px;
-  text-align: center;
-  }
-
-  & button {
-    margin-left: 10px;
-    width: 230px;
-    height: 60px;
-    background: #6E9C9F;
-    color: #fff;
-    font-size: 15px;
-    border: none;
-  }
-}

@@ -1,8 +1,9 @@
+import ContentСontacts from "../components/contentСontacts/ContentСontacts"
 
 const Contacts = () => {
   return (
     <div>
-          <p>Contacts</p>
+          <ContentСontacts/>
     </div>
   )
 }

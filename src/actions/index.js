@@ -137,12 +137,12 @@ export const counterPlus = (cart, countPlus, priceForTheseProductsPlus) => {
   }
 }
 
-export const counterMinus = (cart, copyMinus, priceForTheseProductsMinus) => {
+export const counterMinus = (cart, copyMinus, priceForTheseProducts) => {
   return {
       type: 'COUNTER_MINUS',
       cart,
       copyMinus,
-      priceForTheseProductsMinus
+      priceForTheseProducts
   }
 }
 

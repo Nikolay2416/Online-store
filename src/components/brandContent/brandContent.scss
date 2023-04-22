@@ -1,0 +1,125 @@
+
+.brand {
+  width: 1110px;
+  margin: auto;
+  margin-bottom: 130px;
+
+  &_heading {
+    font-size: 55px;
+    margin: 60px 0px 20px 0px;
+  }
+
+  &_navigation {
+    margin: 0px 0px 60px 0px;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+
+    &_link {
+      color: #000000;
+      text-decoration: none;
+
+      &:hover {
+        color: #6E9C9F;
+      }
+    }
+
+    & span {
+      color: #919191;
+    }
+  }
+
+  &_main {
+
+    &_blockOne {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 130px;
+
+      &_img {
+        margin-right: 45px;
+        width: 442px;
+        height: 547px;
+
+        & img {
+          width: 442px;
+          height: 547px;
+        }
+      }
+
+      &_text {
+        margin-left: 45px;
+
+        & h3 {
+          font-weight: 500;
+          font-size: 25px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+          margin-bottom: 46px;
+        }
+
+        & p {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+          margin-bottom: 22px;
+        }
+      }
+    }
+
+    &_blockTwo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 130px;
+
+      &_img {
+        margin-left: 45px;
+        width: 442px;
+        height: 547px;
+
+        & img {
+          width: 442px;
+          height: 547px;
+        }
+      }
+
+      &_text {
+        margin-right: 45px;
+
+        & h3 {
+          font-weight: 500;
+          font-size: 25px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+          margin-bottom: 46px;
+        }
+
+        & p {
+          font-weight: 500;
+          font-size: 17px;
+          line-height: 140%;
+          letter-spacing: 0.02em;
+          margin-bottom: 22px;
+        }
+      }
+    }
+  }
+
+  &_button {
+    display: flex;
+    justify-content: center;
+
+    & button {
+      width: 236px;
+      height: 68px;
+      background: #6E9C9F;
+      color: #fff;
+      font-size: 15px;
+      border: none;
+    }
+  }
+}

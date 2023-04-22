@@ -14,11 +14,12 @@ const Cart = () => {
   let theTotalAmountOfProductsProduced = 0;
 
   useEffect(() => {
+      console.log(sumProducts, theTotalAmountOfProductsProduced)
       dispatch(setSumProducts(theTotalAmountOfProductsProduced))
   }, [theTotalAmountOfProductsProduced]);
 
   
-  console.log(sumProducts, theTotalAmountOfProductsProduced)
+  
 
   const renderProductList = (arr) => {
     if (arr.length === 0) {
@@ -40,6 +41,7 @@ const Cart = () => {
 
       let priceForTheseProducts = count * price;
       theTotalAmountOfProductsProduced = theTotalAmountOfProductsProduced + priceForTheseProducts;
+      // console.log(sumProducts, theTotalAmountOfProductsProduced)
 
       // setTheTotalAmountOfProductsProduced(theTotalAmountOfProductsProduced + priceForTheseProducts);
 
@@ -80,7 +82,14 @@ const Cart = () => {
       </div>
       {elements}
       
-      <button onClick={() => dispatch(setSumProducts(theTotalAmountOfProductsProduced))} >обновить</button>
+      <div className="product_update">
+        <button 
+          className="product_update_button" 
+          onClick={() => dispatch(setSumProducts(theTotalAmountOfProductsProduced))}
+        >
+          обновить
+        </button>
+      </div>
       <div className="product_result">
         <div className="product_result_amount-body">
           <div className="product_result_amount">

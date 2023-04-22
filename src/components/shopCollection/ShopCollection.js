@@ -49,25 +49,32 @@ const ShopСollection = () => {
     }
 
     return arr.map(({id,image, price, title}) => {
+
+        let croppedName = title;
+
+        if (croppedName.length > 28) {
+          croppedName = croppedName.slice(0, 28);
+        } 
+
         return (
-            <Card className="mb-3" style={{width: 320}} key={id}>
-              <Link className="oneProduct-body_navigation_link" to={`/OneItem/${id}`}>
-              <Image width={280} height={390} className="m-3 object-fit-cover" src={image}/>
-              <Card.Body className="m-auto">
-                <Card.Title>{title}</Card.Title>
-                <div className="price text-center">{price}$</div>
-              </Card.Body>
-              </Link>
-              <div className="card_body">
-                <input type="number" 
-                value={quantityOfGoods}
-                onChange={handleChange}
-                />
-                <button
-                  onClick={() => dispatch(requestСart(id, quantityOfGoods))}
-                >Добавить в корзину</button>
+              <div className="shopCollection_products_product " key={id}>
+                <Link className="shopCollection_products_product_link" to={`/OneItem/${id}`}>
+                  <img  className="" src={image}/>
+                  <div className="shopCollection_products_product_body" >
+                    <p className="shopCollection_products_product_body_title">{croppedName}</p>
+                    <div className="shopCollection_products_product_body_price">{price}$</div>
+                  </div>
+                </Link>
+                <div className="shopCollection_products_product_addingToCart">
+                  <input type="number" 
+                    value={quantityOfGoods}
+                    onChange={handleChange}
+                  />
+                  <button
+                    onClick={() => dispatch(requestСart(id, quantityOfGoods))}
+                  >Добавить в корзину</button>
+                </div>
               </div>
-            </Card>
         )
     })
   }
@@ -84,7 +91,7 @@ const ShopСollection = () => {
       <button
         key={number}
         id={number}
-        className={number == currentPage ? "shopCollection-body_buttons-group_button-active" : "shopCollection-body_buttons-group_button"}
+        className={number == currentPage ? "shopCollection_buttons-group_button-active" : "shopCollection_buttons-group_button"}
         onClick={handleClick}
       >
         {number}
@@ -93,17 +100,18 @@ const ShopСollection = () => {
   });
 
   return (
-    <div className="shopCollection-body">
+    <div className="shopCollection">
       <p>
         Показано {numberOfProductsPerPage} из {totalNumberOfProducts} товаров
       </p>
-      <div className="m-auto mt-3 flex row justify-content-between">
+      {/* <div className="m-auto mt-3 flex row justify-content-between"> */}
+      <div className="shopCollection_products">
         {elements}
       </div>
       <p>
         Показано {numberOfProductsPerPage} из {totalNumberOfProducts} товаров
       </p>
-      <div className="shopCollection-body_buttons-group" id="page-numbers">
+      <div className="shopCollection_buttons-group" id="page-numbers">
         {renderPageNumbers}
       </div>
     </div>

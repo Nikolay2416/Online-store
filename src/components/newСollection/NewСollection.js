@@ -1,9 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import {shopFetched} from '../../actions';
+import {Link} from "react-router-dom";
 
-import {Card, Image} from "react-bootstrap";
 import Spinner from '../spinner/Spinner';
+import "./newСollection.scss";
+
+// при нажатии на продукт подниматься в верх страницы
 
 const NewСollection = () => {
 
@@ -30,13 +33,15 @@ const NewСollection = () => {
     return arr.map(({id,image, price, title}) => {
       if (id <= 3) {
         return (
-          <Card className="mb-3" style={{width: 320}} key={id}>
-            <Image width={280} height={390} className="m-3" src={image}/>
-            <Card.Body className="m-auto">
-              <Card.Title>{title}</Card.Title>
-              <div className="price">{price}</div>
-            </Card.Body>
-          </Card>
+          <div className="newСollection_products_product " key={id}>
+            <Link className="newСollection_products_product_link" to={`/OneItem/${id}`}>
+              <img  className="" src={image}/>
+              <div>
+                <p className="newСollection_products_product_title">{title}</p>
+                <div className="newСollection_products_product_price">{price}$</div>
+              </div>
+            </Link>
+          </div>
         )
       }
     })
@@ -45,10 +50,13 @@ const NewСollection = () => {
   const elements = renderProductList(productsShop);
 
   return (
-    <div style={{width: 1110}} className="m-auto">
-      <h2 className="mt-3 mb-3">Новая коллекция</h2>
-       <div className="m-auto mt-3 flex row justify-content-between">
+    <div className="newСollection">
+      <h2 className="newСollection_h2">Новая коллекция</h2>
+      <div className="newСollection_products">
        {elements}
+      </div>
+      <div className="newСollection_button-body">
+        <Link to="/shop"><button>Открыть магазин</button></Link>
       </div>
     </div>
   )

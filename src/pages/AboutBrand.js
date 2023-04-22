@@ -1,7 +1,8 @@
+import BrandContent from "../components/brandContent/BrandContent"
 
 const AboutBrand = () => {
   return (
-    <p>AboutBrand</p>
+    <BrandContent/>
   )
 }
 

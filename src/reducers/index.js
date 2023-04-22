@@ -124,15 +124,15 @@ const productsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 addedToCart: copyMinus,
-                sumProducts:  state.sumProducts - action.priceForTheseProductsMinus
+                sumProducts:  state.sumProducts - action.cart.price
             }
 
         case 'CART_DELETED': 
-        console.log(state.sumProducts, action.priceForTheseProducts)
             return {
                 ...state,
                 addedToCart: state.addedToCart.filter(item => item.id !== action.id),
                 sumProducts:  state.sumProducts - action.priceForTheseProducts
+
             }
 
     // sumProducts
