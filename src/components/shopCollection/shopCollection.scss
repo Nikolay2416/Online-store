@@ -24,10 +24,15 @@
         }
       }
 
-      & img {
-        width: 280px;
+      &_img {
+        width: 320px;
         height: 390px;
-        margin: 20px;
+      
+        & img {
+          width:100%; 
+          height:100%; 
+          object-fit: contain;
+        }
       }
 
       &_body {

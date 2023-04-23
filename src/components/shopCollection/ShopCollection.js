@@ -62,7 +62,9 @@ const ShopСollection = () => {
         return (
               <div className="shopCollection_products_product " key={id}>
                 <Link className="shopCollection_products_product_link" to={`/OneItem/${id}`}>
-                  <img  className="" src={image}/>
+                  <div className="shopCollection_products_product_img">
+                    <img src={image}/>
+                  </div>
                   <div className="shopCollection_products_product_body" >
                     <p className="shopCollection_products_product_body_title">{croppedName}</p>
                     <div className="shopCollection_products_product_body_price">{price}$</div>
