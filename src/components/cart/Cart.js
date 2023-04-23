@@ -13,8 +13,11 @@ const Cart = () => {
 
   const {addedToCart, sumProducts} = useSelector((state) => state.products);
   const dispatch = useDispatch();
-
   let theTotalAmountOfProductsProduced = 0;
+
+  useEffect(() => {
+    dispatch(setSumProducts(theTotalAmountOfProductsProduced));
+  }, []);
 
   const renderProductList = (arr) => {
     if (arr.length === 0) {
@@ -65,15 +68,6 @@ const Cart = () => {
         <p className="product_characteristics_others">Всего</p>
       </div>
       {elements}
-      
-      <div className="product_update">
-        <button 
-          className="product_update_button" 
-          onClick={() => dispatch(setSumProducts(theTotalAmountOfProductsProduced))}
-        >
-          обновить
-        </button>
-      </div>
       <div className="product_result">
         <div className="product_result_amount-body">
           <div className="product_result_amount">
