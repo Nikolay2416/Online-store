@@ -26,7 +26,9 @@ const stringMiddleware = () => (next) => (action) => {
 const store = createStore( 
                     persisterdReducer,
                     compose(applyMiddleware(ReduxThunk, stringMiddleware),
-                            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+                            window.__REDUX_DEVTOOLS_EXTENSION__
+                            ? window.__REDUX_DEVTOOLS_EXTENSION__()
+                            : f => f)
                     );
 
 export const persistor = persistStore(store);
